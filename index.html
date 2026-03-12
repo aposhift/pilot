@@ -416,6 +416,7 @@
   .how-step-body h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 700; color: var(--ink); margin-bottom: 5px; transition: color .2s; }
   .how-step-body p { font-size: .92rem; color: var(--ink-soft); line-height: 1.6; }
   .how-visual-wrap { position: static; }
+  .how-mobile-panel { display: none; }
   .how-panel { display: none; }
   .how-panel.active { display: block; animation: panelIn .3s ease; }
   @keyframes panelIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
@@ -576,22 +577,16 @@
     .compare-arrow-mid { display: none; }
   }
 
-  /* ── HOW SECTION DARK ── */
-  .how-section-dark { background: var(--ink) !important; overflow: hidden; }
-  .how-section-dark .section-tag { background: rgba(37,99,235,.2); border-color: rgba(37,99,235,.3); color: #93c5fd; }
-  .how-section-dark .section-title { color: white; }
-  .how-section-dark .section-title em { background: var(--accent-grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-  .how-section-dark .section-sub { color: rgba(255,255,255,.5); }
-  .how-section-dark .how-step { border-color: rgba(255,255,255,.07); }
-  .how-section-dark .how-step:hover { background: rgba(255,255,255,.05); }
-  .how-section-dark .how-step.active { background: rgba(37,99,235,.15); border-color: rgba(37,99,235,.35); }
-  .how-section-dark .how-step-num { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.12); color: rgba(255,255,255,.4); }
-  .how-section-dark .how-step-body h3 { color: rgba(255,255,255,.9); }
-  .how-section-dark .how-step-body p { color: rgba(255,255,255,.45); }
-  .how-section-dark .how-step.active .how-step-body h3 { color: #93c5fd; }
-  .how-section-dark .how-visual { box-shadow: 0 8px 32px rgba(0,0,0,.3); }
-  .how-section-dark .how-visual-title { color: var(--ink-soft); }
-  .how-section-dark .mockup-disclaimer { color: rgba(255,255,255,.3); }
+  /* ── HOW SECTION (LIGHT) ── */
+  #how .how-step { border-color: var(--border); }
+  #how .how-step:hover { background: var(--card); }
+  #how .how-step.active { background: var(--accent-light); border-color: #bfdbfe; }
+  #how .how-step-num { background: var(--surface); border-color: var(--border); color: var(--ink-soft); }
+  #how .how-step.active .how-step-num { background: var(--accent-grad); border-color: transparent; color: white; }
+  #how .how-step-body h3 { color: var(--ink); }
+  #how .how-step-body p { color: var(--ink-soft); }
+  #how .how-step.active .how-step-body h3 { color: var(--accent); }
+  #how .mockup-disclaimer { color: var(--ink-soft); }
   .spotlight-grid { display: grid; grid-template-columns: 1fr 420px; gap: 64px; align-items: center; }
   .spotlight-chips { display: flex; flex-direction: column; gap: 10px; margin-top: 28px; }
   .spotlight-chip { display: flex; align-items: center; gap: 10px; font-size: .82rem; color: rgba(255,255,255,.65); }
@@ -833,8 +828,7 @@
     .how-step { flex-direction: column; }
     .how-step-inner { display: flex; gap: 20px; }
     .how-mobile-panel { display: none; margin-top: 12px; padding: 0 0 4px 56px; }
-    .how-step.active .how-mobile-panel { display: block; }
-    .pricing-grid { grid-template-columns: 1fr; }
+    .how-step.active .how-mobile-panel { display: block; } { grid-template-columns: 1fr; }
     .pain-grid { grid-template-columns: 1fr; }
     .compare-table { font-size: .82rem; }
     .hero h1 { font-size: 2.4rem; }
@@ -1282,7 +1276,7 @@
 </section>
 
 <!-- HOW IT WORKS -->
-<section id="how" class="how-section-dark" style="padding-top: 200px; padding-bottom: 200px;">
+<section id="how" style="padding-top: 200px; padding-bottom: 200px; background: var(--surface)">
   <div class="section-inner">
     <div class="how-grid-layout" style="align-items:start">
       <div>
