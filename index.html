@@ -2347,4 +2347,17 @@ Wenn jemand Interesse hat, weise freundlich auf das Pilot-Formular weiter unten 
       const data = await res.json();
       const reply = data.content?.[0]?.text || 'Entschuldigung, da ist etwas schiefgelaufen. Bitte versuch es nochmal!';
       typing.remove();
-      chatHistory.push({ role: 'as
+      chatHistory.push({ role: 'assistant', content: reply });
+      const div = document.createElement('div');
+      div.className = 'msg bot';
+      div.textContent = reply;
+      msgs.appendChild(div);
+      msgs.scrollTop = msgs.scrollHeight;
+    } catch (err) {
+      typing.remove();
+      addBotMessage('Entschuldigung, da ist etwas schiefgelaufen. Bitte versuch es nochmal!');
+    }
+  }
+</script>
+</body>
+</html>
